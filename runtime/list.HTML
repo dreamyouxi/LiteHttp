@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>留言板</title>
+
+ 
+</head>
+<body>
+
+ 
+ <a href="add.html">添加留言</a>
+ 
+ <br> <br> <br> 
+
+
+
+<div id = "list">
+
+</div>
+
+
+<script type="text/javascript">
+
+    // "http://127.0.0.1/login?name=5",
+ 
+
+
+
+
+
+ var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("list").innerHTML=xmlhttp.responseText;
+    }
+  }
+xmlhttp.open("GET","/MsgBoard?list",true);
+xmlhttp.send();
+</script>
+ 
+ <br> <br> <br>  
+ 
+
+ <p>-----------------该页面演示litehttp用lua编写的动态网页</p>
+
+ 
+</body>
+</html>
