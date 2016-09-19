@@ -12,7 +12,7 @@ static std::mutex _script_mutex;
 
 
 //dis able cache for lua script
-#define DISABLE_LUA_CACHE  
+#define DISABLE_LUA_CACHE
 
 
 std::string  ScriptCore::exec(std::string file, std::string param)
@@ -228,6 +228,8 @@ int _cdecl SQLScriptInterface::SQL_Script_release(lua_State*l)
 	void *  instance = lua_touserdata(l, top);
 
 	SQLInterface* ins = (SQLInterface*)instance;
+	ins->release();
+
 
 	return 0;
 }

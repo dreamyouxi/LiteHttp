@@ -76,7 +76,7 @@ void SQLInterface::pushParams(std::vector<char*> & params, int count)
 			char *str = row[i++];
 			params.push_back(str);
 		}
-		cout << endl;  //  << "     " << sql_row[2] << endl;
+ //  << "     " << sql_row[2] << endl;
 	}
 
 }
@@ -86,6 +86,8 @@ void SQLInterface::release()
 {
 	if (res)mysql_free_result(res);
 	if (mysql)mysql_close(mysql);
+//	delete this;
+
 }
 
 

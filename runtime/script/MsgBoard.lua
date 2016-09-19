@@ -45,10 +45,7 @@ function t:doRequest(p)
  
 			local vv;
 
-  		  for k ,v in ipairs(t) do
-     		   print(k   ..  "   :     ".. v);
-			--	ret = ret .. 	v;
-  		  end
+ 
 			
 		local len = table.getn(t);
 		for i=1 , len,3 do
